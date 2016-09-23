@@ -26,6 +26,10 @@ install_nodejs() {
   rm -rf $dir/*
   mv /tmp/node-v$version-$os-$cpu/* $dir
   chmod +x $dir/bin/*
+
+  echo "Installing RSVG + PDFTK"
+  apt-get install librsvg2-bin -y --force-yes
+  apt-get install pdftk -y --force-yes
 }
 
 install_iojs() {
